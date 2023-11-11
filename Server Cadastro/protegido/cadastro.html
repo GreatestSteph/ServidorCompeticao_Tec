@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Cadastro Tech Tup</title>
+</head>
+<body>
+
+    <div class="cadastro-container">
+
+        <form class="cadastro-form">
+            
+            <h2> Bem-vinda ao Tech Cup 2025!</h2>
+            <h5> Para poder participar da competição, você deve nos contar um pouco mais sobre você!</h5>
+            <form>
+
+                <!-- okay! -->
+                <div class="form-group">
+                </br>
+                  <label for="nomedotime">Nome do time:</label>
+                  <input type="text" class="form-control" id="nomedotime" name="nomedotime" placeholder="Escreva aqui o nome do time" required onclick="validanometime()">
+                  <div class="alertanomedotime">
+                    <p class="alertared">Digite um nome maior que 3 caracteres e com pelo menos 3 letras diferentes! </p>
+                  </div> 
+                </div>
+  
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="nomelider">Qual o nome do líder do time?</label>
+                  <input type="text" class="form-control" id="nomelider" name="nomelider" placeholder="Escreva aqui o nome do líder" required onclick="validanome()">
+                  <div class="nomelider">
+                    <p class="alertared">Digite o nome completo! Sem símbolos como @, #, &, % ou números!</p>
+                  </div>
+                </div>
+  
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="contaidade">Quanto tempo o time utiliza a programação ou outras tecnologias?</label>
+                  <select class="form-control" id="contaidade" name="contaidade" style="font-size: 13px; height: 33px;" required onclick="validacaixas1()">
+                    <option value="nenhum1"> Clique aqui para selecionar o tempo </option>
+                    <option value="Menos de 1 ano"> Menos de 1 ano </option>
+                    <option value="1e4 anos"> Entre 1 ano a 4 anos </option>
+                    <option value="4e8 anos"> Entre 4 a 8 anos </option>
+                    <option value="8mais"> Mais de 8 anos</option>
+                  </select>
+                  <div class="naoselecionadoalerta">
+                    <p class="alertared">Por favor selecione uma opção! </p>
+                  </div>
+                </div>
+  
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="pessoastime">Pessoas no time:</label>
+                  <select class="form-control" id="pessoastime" name="pessoastime" style="font-size: 13px; height: 33px;" required onclick="validacaixas2()">
+                    <option value="nenhum2"> Clique aqui para selecionar o número de pessoas no time </option>
+                    <option value="1 pessoa"> 1 participante</option>
+                    <option value="2 pessoas">2 participantes</option>
+                    <option value="3 pessoas">3 participantes</option>
+                    <option value="4 pessoas">4 participantes</option>
+                    <option value="5 pessoas">5 participantes</option>
+                    <option value="6 pessoas">6 participantes</option>
+                  </select>
+                  <div class="naoselecionadoalerta2">
+                    <p class="alertared">Por favor selecione uma opção! </p>
+                  </div>
+                </div>
+  
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="idade">Idade aproximada do time:</label>
+                  <select class="form-control" id="idade" name="idade" style="font-size: 13px; height: 33px;" required onclick="validacaixas3()">
+                    <option value="nenhum3"> Clique aqui para selecionar a idade aproximada do time </option>
+                    <option value="Entre1418">Entre 14 a 18 anos</option>
+                    <option value="Entre1825">Entre 18 a 25 anos</option>
+                    <option value="Entre1825">Entre 25 a 50 anos</option>
+                    <option value="Entre2540">Idade variada</option>
+                  </select>
+                  <div class="naoselecionadoalerta3">
+                    <p class="alertared">Por favor selecione uma opção! </p>
+                  </div>
+                </div>
+                
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="tecnologia">Quais tecnologias você conhece? </label>
+                  <ul id="tecnologia" name="tecnologia" style="font-size: 13px; height: 33px;" required onclick="validacaixas4()">
+                    <label>
+                        <input type="checkbox" name="preferencias" value="banco">
+                        Banco de dados  
+                    </label>
+                    <label>
+                        <input type="checkbox" name="preferencias" value="fronte">
+                        Front End
+                    </label>
+                    <label>
+                        <input type="checkbox" name="preferencias" value="backe">
+                        Back End
+                    </label>
+                    </br>
+
+                    <label>
+                        <input type="checkbox" name="preferencias" value="android">
+                        Desenvolvimento Android
+                        </label>
+                    <label>
+                        <input type="checkbox" name="preferencias" value="embar">
+                        Software embarcado
+                    </label>
+                    <label>
+                        <input type="checkbox" name="preferencias" value="anali">
+                        Análise de dados
+                    </label>
+                    </br>
+
+                    <label>
+                        <input type="checkbox" name="preferencias" value="robo">
+                        Robótica
+                    </label>
+                    <label>
+                        <input type="checkbox" name="preferencias" value="robo">
+                        Office 360
+                    </label>
+                    <label>
+                        <input type="checkbox" name="preferencias" value="robo">
+                        Outros
+                    </label>
+                  </ul>
+                    </br>
+
+                  <div class="naoselecionadoalerta4">
+                    <p class="alertared">Por favor selecione uma opção! </p>
+                  </div>
+                </div>
+                
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="nomecontato">Pessoa para contato:</label>
+                  <input type="text" class="form-control" id="nomecontato" name="nomecontato" placeholder="Escreva aqui o nome da pessoa para contato" required onclick="validacontato()">
+                  <div class="alertanomecontato">
+                    <p class="alertared">Digite o nome completo! Sem símbolos como @, #, &, % ou números!</p>
+                  </div>
+                </div>
+                
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Escreva aqui, o email da pessoa para contato, exemplo: aaaa@aaaa.aaa" required onclick="validaemail()">
+                  <div class="alertaemail">
+                    <p class="alertared">Digite o email corretamente incluindo "@"" e "."!</br> Verifique se seu usuário e domínio estão digitados corretamente!</p>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="discord">Discord para contato:</label>
+                  <input type="text" class="form-control" id="discord" name="discord" placeholder="Escreva aqui, o discord da pessoa para contato, exemplo: usuario#1234" required onclick="validadiscord()">
+                  <div class="alertadiscord">
+                    <p class="alertared">Digite o usuário corretamente com 4 números após a tag "#"! </br>Verifique se o usuário possui entre 2 a 32 caracteres </p>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="infoprojeto">Qual projeto será apresentado?</label>
+                    <textarea class="form-control" id="infoprojeto" name="infoprojeto" placeholder="Descreva aqui o projeto a ser apresentado." rows="4" style="height: 64px; resize: none;" required></textarea>
+                  </div>
+
+                <!-- okay! -->
+                <div class="form-group">
+                  <label for="infopessoa">Informações sobre o time:</label>
+                  <textarea class="form-control" id="infopessoa" name="infopessoa" placeholder="Escreva aqui informações adicionais sobre o seu time, que talvez você gostaria de nos contar! Não é necessário preencher caso não queira escrever." rows="4" style="height: 64px; resize: none;"></textarea>
+                </div>
+                
+                <!-- botão para enviar o formulário-->
+                <button type="submit" class="btn btn-primary" id="botao" class="botao">Enviar</button>
+              </form>
+
+        </form>   
+
+    </div> 
+
+</body>
+</html>
