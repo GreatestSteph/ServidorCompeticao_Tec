@@ -1,12 +1,19 @@
 import express from 'express'; //importa express
 import session from 'express-session'; //importa session do express
-import autenticaçaologin, {UsuarioAutenticado} from './segurança/autenticar.js'; 
+import logarusuario, {verificarautenticaçao} from './segurança/autenticar.js'; 
 //importa as funçoes autenticaçaologin e UsuarioAutenticado do arquivo autenticarjs
+
+
+
+
 
 const localizaçaohostname = 'localhost'; //local do server
 const numeroporta = 1515; //numero da porta
 const aplicacao = express();  
 //cria uma aplicação como instancia do express
+
+
+
 
 //instalado a partir do npm install session
 aplicacao.use(session({ //configura a sessão/login de determinado usuario
@@ -27,6 +34,8 @@ aplicacao.use(session({ //configura a sessão/login de determinado usuario
 
 
 
+
+
 aplicacao.use(express.urlencoded({extended: true})); 
 // as informaçoes enviadas de um formulario/etc
 // são analisadas e então codificadas em um objeto javascript (transformadas)
@@ -40,6 +49,9 @@ aplicacao.use(express.urlencoded({extended: true}));
 
 
 
+
+
+
 aplicacao.get('/', (requisicao, resposta) => { //se o usuario digitar apenas /
     resposta.redirect('/login.html'); //ele será redirecionado para a pagina de login
 }); //ok
@@ -48,9 +60,11 @@ aplicacao.get('/login', (requisicao, resposta) => { //se o usuario digitar /logi
     resposta.redirect('/login.html'); //o usuario sera redirecionado para a pagina de login
 });
 
-aplicacao.post('/login', autenticaçaologin); 
+aplicacao.post('/login', logarusuario); 
 //ao acessar a pagina de login
 //o usuario recebe uma requisiçao e produz uma resposta a partir da funçao autenticaçaologin
+
+
 
 
 
@@ -58,9 +72,11 @@ aplicacao.post('/login', autenticaçaologin);
 aplicacao.use(express.static('./public')); 
 //a aplicaçao disponibiliza os arquivos da pasta public, de forma estática
 
-aplicacao.use(UsuarioAutenticado, express.static('./protegido'));
+aplicacao.use(verificarautenticaçao, express.static('./protegido'));
 //a aplicaçao disponibiliza os arquivos da pasta protegida, de forma estática
 //verifica se o usuario foi autenticado antes de levar ele as paginas da pasta protegida
+
+
 
 
 
@@ -69,3 +85,28 @@ aplicacao.listen(numeroporta, localizaçaohostname, () => {
     console.log('O servidor está funcionando em ' + localizaçaohostname + ', na porta: ' + numeroporta); 
     // o server ao ler ou receber uma requisiçao, vai mostrar uma mensagem
 });
+
+
+
+
+
+
+
+//testar se o banco de dados está funcionando
+
+//import usuarioclasse from "./modelo/usuario.js"
+
+//const pessoa = new usuarioclasse(id, "nomedotime", "nomedolider", "contaidade", "pessoastime", "tecnologiaidade", "pessoastime", "idade", "tecnologia", "nomecontato", "email", "discord", "infoprojeto", "infopessoa");
+
+
+
+
+//consulta
+
+//usuarioclasse.consultar().then((listapessoas) => {
+//   for (const pessoa of listapessoas){
+//        console.log(usuarioclasse.toJSON())
+//    }
+//}).catch((erro) => {
+//    console.log('Não foi possível consultar o usuário!' + erro.message);
+//})

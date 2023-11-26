@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="cores.css">
     <title>Login Tech Cup</title>
 </head>
 <body>
-
-    <div class="login-container">
-        <form class="login-form" method="post" action="/login">
-            <!-- O metodo post envia as informações para o servidor-->
-            <!-- a ação (action) é o endereço de certas informações do servidor -->
-            <h2>Tela de Login</h2>
-            <input type="text" id="email" name="email" placeholder="Email" required>
-            <br>
-            <input type="password" id="senha" name="senha" placeholder="Senha" required>
-            <br>
-            <button type="submit">Entrar</button>
-        </form>
+    <div class="conteudo">
+        <div class="login-container">
+            <form class="login-form" method="post" action="/login">
+                <!-- O metodo post envia as informações para o servidor-->
+                <!-- a ação (action) é o endereço de certas informações do servidor -->
+                <h2 class="texto">Conecte-se!</h2>
+                <br>
+                <input class="digiteaq" type="text" id="email" name="email" placeholder=" Email" required>
+                <br>
+                <input class="digiteaq" type="password" id="senha" name="senha" placeholder=" Senha" required>
+                <br>
+                <button class="botao" id="botao "type="submit">Entrar</button>
+            </form>
+        </div>
     </div>
-
 </body>
 </html>
