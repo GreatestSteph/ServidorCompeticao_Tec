@@ -1,4 +1,4 @@
-import usuario_dao from "./campersistencia/userdao.js"; //ok
+import usuario_dao from "../campersistencia/userdao.js"; //ok
 
 // cria classe usuario
 export default class usuarioclasse{
@@ -23,6 +23,7 @@ export default class usuarioclasse{
         this.#pessoastime = pessoastime;
         this.#idade = idade;
         this.#tecnologia = tecnologia;
+        this.setTecnologiaFromString(tecnologia);
         this.#nomecontato = nomecontato;
         this.#email = email;
         this.#discord = discord;
@@ -85,6 +86,16 @@ export default class usuarioclasse{
     set tecnologia(novatecnologia) {
         this.#tecnologia = novatecnologia;
     }
+
+
+    setTecnologiaFromString(tecnologiaString) {
+        this.#tecnologia = tecnologiaString ? tecnologiaString.split(', ') : [];
+    }
+
+    getTecnologiaAsString() {
+        return this.#tecnologia.join(', ');
+    }
+
 
     get nomecontato() {
         return this.#nomecontato;
@@ -152,12 +163,16 @@ export default class usuarioclasse{
     //eles dependem da ação do banco de dados
     
     //mudar aqui
-    async gravar(){
+    async gravar() { //funciona
         const novousuarioDAO = new usuario_dao();
+        const tecnologiaString = this.getTecnologiaAsString();
+        this.#tecnologia = tecnologiaString ? tecnologiaString.split(', ') : [];
         await novousuarioDAO.gravar(this);
     };
-    async atualizar(){
+    async atualizar() {
         const novousuarioDAO = new usuario_dao();
+        const tecnologiaString = this.getTecnologiaAsString();
+        this.#tecnologia = tecnologiaString ? tecnologiaString.split(', ') : [];
         await novousuarioDAO.atualizar(this);
     };
     async excluir(){

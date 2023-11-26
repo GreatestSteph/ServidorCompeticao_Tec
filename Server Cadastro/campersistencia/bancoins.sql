@@ -5,7 +5,7 @@ CREATE TABLE pessoa (
     tecnologiaidade VARCHAR(30) NOT NULL,
     pessoastime VARCHAR(30) NOT NULL,
     idade VARCHAR(30) NOT NULL,
-    tecnologia VARCHAR(30) NOT NULL,
+    tecnologia VARCHAR(100) NOT NULL,
     nomecontato VARCHAR(100) NOT NULL,
     email VARCHAR(40) NOT NULL,
     discord VARCHAR(20) NOT NULL,
