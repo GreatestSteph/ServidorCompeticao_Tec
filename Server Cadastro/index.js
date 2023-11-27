@@ -1,6 +1,7 @@
 import express from 'express'; //importa express
 import session from 'express-session'; //importa session do express
 import logarusuario, {verificarautenticaçao} from './segurança/autenticar.js'; 
+import rotasdousuario from './rotas/rotasdousuario.js';
 import usuarioclasse from "./modelo/usuario.js"
 //importa as funçoes autenticaçaologin e UsuarioAutenticado do arquivo autenticarjs
 
@@ -129,3 +130,8 @@ aplicacao.listen(numeroporta, localizaçaohostname, () => {
 //}).catch((erro) => {
 //    console.log('Não foi possível consultar o usuário!' + erro.message);
 //})
+
+
+//permite que o express manipula objetos no formato json
+aplicacao.use(express.json());
+aplicacao.use('/usuario', rotasdousuario)
