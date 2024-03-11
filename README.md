@@ -1,2 +1,2 @@
-# Testando Servidor
-Testando servidor criado durante a aula.
+# Criando um servidor (básico)
+Criando componentes básicos de um servidor.
